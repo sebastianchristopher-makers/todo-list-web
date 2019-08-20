@@ -5,3 +5,8 @@
 #As a user I would like to set an optional deadline on my todo items
 
 #As a user I would like to be able to tick items off my list
+
+
+class               ~ ToDoList
+methods             ~ list
+instance variables  ~

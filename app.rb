@@ -2,19 +2,19 @@ require 'sinatra/base'
 require_relative 'lib/todolist'
 class ToDoListApp < Sinatra::Base
 
-  @todolist = ToDoList.new
+  $todolist = ToDoList.new
 
   get '/' do
-    'Hello World'
+    'Hello world'
   end
 
   get '/todolist' do
-
+    $todolist.list
   end
 
   post '/add-item' do
     item = params['item']
-    
+
     redirect('/todolist')
   end
 
