@@ -22,7 +22,10 @@ feature "homepage" do
     expect(page).to have_content 'Buy stamps by Thursday'
   end
 
-  xscenario 'I should be able to tick items off my list' do
-
+  scenario 'I should be able to tick items off my list' do
+    visit '/todolist'
+    fill_in('name', :with => 'Buy milk')
+    click_button('Complete')
+    expect(page).to have_css('p.complete', :text => 'Buy milk')
   end
 end

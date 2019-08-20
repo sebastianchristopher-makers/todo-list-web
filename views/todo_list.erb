@@ -2,14 +2,16 @@
   .complete {
   text-decoration: line-through;
 }
-<h1>To do:</h1>
 </style>
+<h1>To do:</h1>
 <% @list.each do |item| %>
+  <DIV>
   <% if item.deadline.nil? %>
     <p class="<%= 'complete' if item.complete == true %>"><%= item.name %></p>
   <% else %>
     <p class="<%= 'complete' if item.complete == true %>"><%= item.name %> by <%= item.deadline %></p>
   <% end %>
+  </DIV>
 <% end %>
 <form name="mark-complete" action="/todolist" method="POST">
   Mark item as complete (enter name): <input type="text" name="name">
