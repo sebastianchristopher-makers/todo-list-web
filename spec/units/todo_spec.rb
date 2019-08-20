@@ -19,7 +19,7 @@ describe ToDo do
       todo = ToDo.new('Buy milk')
       expect(todo.complete).to be(false)
     end
-    it 'cna be marked complete' do
+    it 'can be marked complete' do
       todo = ToDo.new('Buy milk')
       todo.tick_off
       expect(todo.complete).to be(true)

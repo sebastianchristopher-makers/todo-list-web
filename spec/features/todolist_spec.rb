@@ -21,4 +21,8 @@ feature "homepage" do
     click_button('submit')
     expect(page).to have_content 'Buy stamps by Thursday'
   end
+
+  xscenario 'I should be able to tick items off my list' do
+
+  end
 end

@@ -7,7 +7,7 @@ class ToDoList
   end
 
   def list
-    @todos
+    @todos.dup
   end
 
   def add(item)

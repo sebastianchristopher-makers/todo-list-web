@@ -1,8 +1,0 @@
-<% @list.each do |item| %>
-  <% if item.deadline.nil? %>
-    <p><%= item.name %></p>
-  <% else %>
-    <p><%= item.name %> by <%= item.deadline %></p>
-  <% end %>
-  <% p item %>
-<% end %>

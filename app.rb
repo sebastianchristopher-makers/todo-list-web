@@ -11,7 +11,13 @@ class ToDoListApp < Sinatra::Base
   get '/todolist' do
     @list = $todolist.list
     p @list
-    erb(:index)
+    erb(:todo_list)
+  end
+
+  post '/todolist' do
+    name = params['name']
+    $todolist.tick_off(name)
+    redirect('/todolist')
   end
 
   post '/add-item' do
