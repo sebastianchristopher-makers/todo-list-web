@@ -9,11 +9,14 @@ class ToDoListApp < Sinatra::Base
   end
 
   get '/todolist' do
-    $todolist.list
+    @list = $todolist.list
+    p @list
+    erb(:index)
   end
 
   post '/add-item' do
-    item = params['item']
+    item = ToDo.new(params['name'], params['deadline'])
+    $todolist.add(item)
 
     redirect('/todolist')
   end
