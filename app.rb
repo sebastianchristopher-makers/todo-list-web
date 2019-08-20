@@ -1,5 +1,8 @@
 require 'sinatra/base'
 require_relative 'lib/todolist'
+require_relative 'views/helper'
+
+
 class ToDoListApp < Sinatra::Base
 
   $todolist = ToDoList.new

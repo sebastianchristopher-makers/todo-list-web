@@ -7,7 +7,7 @@
 <% @list.each do |item| %>
   <DIV>
   <% if item.deadline.nil? %>
-    <p class="<%= 'complete' if item.complete == true %>"><%= item.name %></p>
+    <p class="<%= Helper.complete?(item) %>"><%= item.name %></p>
   <% else %>
     <p class="<%= 'complete' if item.complete == true %>"><%= item.name %> by <%= item.deadline %></p>
   <% end %>

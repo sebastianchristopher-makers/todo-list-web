@@ -6,6 +6,8 @@
 
 #As a user I would like to be able to tick items off my list
 
+#As a user I would like to be able to enter a date as the deadline
+
 
 class               ~ ToDoList
 methods             ~ list
