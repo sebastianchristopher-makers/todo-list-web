@@ -4,17 +4,17 @@
 }
 </style>
 <h1>To do:</h1>
+<form name="mark-complete" action="/todolist" method="POST">
 <% @list.each do |item| %>
   <DIV>
   <% if item.deadline.nil? %>
-    <p class="<%= Helper.complete?(item) %>"><%= item.name %></p>
+    <p class="<%= Helper.complete?(item) %>"><%= item.name %> <input type="checkbox" id="<%= item.name %>" name="name[]" value="<%= item.name %>"> Complete?<br> </p>
   <% else %>
-    <p class="<%= 'complete' if item.complete == true %>"><%= item.name %> by <%= item.deadline %></p>
+    <p class="<%= Helper.complete?(item) %>"><%= item.name %> by <%= item.deadline %> <input type="checkbox" name="name[]" value="<%= item.name %>"> Complete?<br> </p>
   <% end %>
   </DIV>
 <% end %>
-<form name="mark-complete" action="/todolist" method="POST">
-  Mark item as complete (enter name): <input type="text" name="name">
-  <input type="submit" value="Complete">
+<input type="submit" value="Update">
 </form>
+
 <a href='/add-item-input'> Add an item</a>

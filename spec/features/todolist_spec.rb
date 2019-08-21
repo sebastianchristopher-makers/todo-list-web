@@ -24,8 +24,8 @@ feature "homepage" do
 
   scenario 'I should be able to tick items off my list' do
     visit '/todolist'
-    fill_in('name', :with => 'Buy milk')
-    click_button('Complete')
+    check('Buy milk')
+    click_button('Update')
     expect(page).to have_css('p.complete', :text => 'Buy milk')
   end
 end

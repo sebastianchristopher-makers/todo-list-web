@@ -18,8 +18,13 @@ class ToDoListApp < Sinatra::Base
   end
 
   post '/todolist' do
-    name = params['name']
-    $todolist.tick_off(name)
+    p params[:name]
+    p params[:checked]
+    names = params[:name]
+    redirect('/todolist') if !names
+    names.each { |name|
+      $todolist.tick_off(name)
+    }
     redirect('/todolist')
   end
 
